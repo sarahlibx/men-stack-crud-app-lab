@@ -1,0 +1,26 @@
+<!-- views/books/new.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Add To Your Bookshelf</title>
+  </head>
+  <body>
+    <h1>Add a new book to your shelf!</h1>
+    <form action="/books" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" />
+
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" />
+
+      <label for="isRead">Have you read this book yet?</label>
+      <input type="checkbox" name="isRead" id="is-read" />
+
+      <button type="submit">Add Book</button>
+    </form>
+    <a href="/books/">Back to Bookshelf</a>
+  </body>
+</html>

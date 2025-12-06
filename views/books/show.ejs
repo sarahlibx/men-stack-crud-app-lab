@@ -1,0 +1,24 @@
+<!-- views/books/show.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= book.title %></title>
+  </head>
+  <body>
+    <h1><%= book.title %></h1>
+    <h2><%= book.author %></h2>
+    <% if (book.isRead) { %>
+    <p>You have read this book.</p>
+    <% } else { %>
+    <p>This book is on your TBR!</p>
+    <% } %>
+    <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete <%= book.title %></button>
+    </form>
+    <a href="/books/<%= book._id %>/edit">Edit <%= book.title %></a>
+    <a href="/books/">Go back to your bookshelf</a>
+  </body>
+</html>

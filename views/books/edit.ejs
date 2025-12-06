@@ -1,0 +1,26 @@
+<!-- views/books/edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit Your Bookshelf</title>
+  </head>
+  <body>
+    <h1>Edit <%=book.title %>:</h1>
+    <form action="/books/<%=book._id%>?_method=PUT" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" value="<%= book.title %>" />
+
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" />
+
+      <label for="isRead">Have you read this book yet?</label>
+      <input type="checkbox" name="isRead" <%= book.isRead ? "checked" : "" %> >
+
+      <button type="submit">Update Book</button>
+    </form>
+    <a href="/books/">Back to Bookshelf</a>
+  </body>
+</html>
